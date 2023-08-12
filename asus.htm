@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" href = "cube.jpg" type = "image/x-icon">
+    <title>Asus TUF Gaming</title>
+</head>
+<body class="m-0 p-0 bg-black w-full">
+    <div class="wrap">
+
+        <nav class="navbar fixed top-0 w-full bg-black font-semibold">
+            <div class="max-w-8xl py-3 px-10 mx-auto">
+                <div class="flex justify-between">
+                    <div class="flex">
+                        <!--logo-->
+                        <div class="mr-2">
+                            <a href="#" class="flex items-center px-2 py-4 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class=" text-yellow-500 w-9 h-9 mr-2">
+                                    <path d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z" />
+                                  </svg> 
+                                <span class="font-bold text-2xl">Asus</span>                                  
+                            </a>
+                        </div>
+                        <!--primary nav-->
+                        <div class="hidden md:flex items-center space-x-3 pl-5">
+                            <a href="#features" class="featurebtn px-2 py-4 text-xl text-white hover:text-gray-400">Accessories</a>
+                            <a href="#videos" class="videobtn px-2 py-4 text-xl text-white hover:text-gray-400">Videos</a>
+                        </div>
+                    </div>
+                    <!--secondary nav-->
+                    <div class="hidden md:flex items-center space-x-3">
+                        <a href="#" onclick="openForm1()" class="px-4 py-3 border-2 text-white border-yellow-500 hover:bg-gray-600 transition duration-500">Login</a>
+                        <a href="#" onclick="openForm2()" class="px-4 py-3 border border-yellow-500 rounded bg-yellow-500 text-white hover:bg-yellow-400 transition duration-300">Sign-up</a>
+                    </div>
+                    <!--mobile nav hamburger-->
+                    <div class="md:hidden py-4">
+                        <button class="mobile-menu-button text-white">
+                            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--mobile menu-->
+            <div class="mobile-menu hidden md:hidden text-white text-center">
+                <a href="#features" class="block py-2 px-2 md:text-sm text-xs hover:bg-gray-400">Accessories</a>
+                <a href="#videos" class="block py-2 px-2 md:text-sm text-xs hover:bg-gray-400">Videos</a>
+                <a href="#" onclick="openForm1mini()" class="block py-2 px-2 md:text-sm text-xs hover:bg-gray-400">Login</a>
+                <a href="#" onclick="openForm2mini()" class="block py-2 px-2 md:text-sm text-xs hover:bg-gray-400">Sign-up</a>
+            </div>
+            <!--Popup login--> 
+            <div class="form-popup1 text-black bg-yellow-500 hidden fixed bottom-48 left-[40rem] border border-white z-10 h-[27rem] w-[20rem] transform " id="myForm">
+                <form action="/action_page.php" class="form-container">
+                    <h1 class="font-bold text-3xl text-left pl-6 pt-8">Login</h1>
+                    <div class="pt-10">
+                        <div>
+                        <label class="p-6" for="email"><b>Email</b></label>
+                        <input class="w-64 h-10 p-6 border-none mt-5 mb-0 ml-6 mr-0" type="text" placeholder="Enter Email" name="email" required>
+                        </div>
+                        <div class="pt-4">
+                            <label class="p-6 mt-6" for="psw"><b>Password</b></label>
+                            <input class="w-64 h-10 p-6 border-none mt-5 mb-0 ml-6 mr-0" type="password" placeholder="Enter Password" name="psw" required>
+                        </div>
+                        <div class="pt-2 font-bold text-center">
+                            <button type="submit" class="btn w-14 h-8 bg-black text-yellow-500 hover:bg-gray-900">Login</button>
+                        </div>
+                        <div class="text-center pt-10">
+                            <button type="button" class="btn cancel w-12 h-7 bg-red-600 hover:bg-red-500" onclick="closeForm1()">Close</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--Popup login mini-->
+            <div class="form-popup1mini text-black bg-yellow-500 hidden fixed bottom-48 left-[3rem] border border-white z-10 h-[27rem] w-[19rem] transform " id="myForm">
+                <form action="/action_page.php" class="form-container">
+                    <h1 class="font-bold text-3xl text-left pl-6 pt-8">Login</h1>
+                    <div class="pt-10">
+                        <div>
+                        <label class="p-6" for="email"><b>Email</b></label>
+                        <input class="w-64 h-10 p-6 border-none mt-5 mb-0 ml-6 mr-0" type="text" placeholder="Enter Email" name="email" required>
+                        </div>
+                        <div class="pt-4">
+                            <label class="p-6 mt-6" for="psw"><b>Password</b></label>
+                            <input class="w-64 h-10 p-6 border-none mt-5 mb-0 ml-6 mr-0" type="password" placeholder="Enter Password" name="psw" required>
+                        </div>
+                        <div class="pt-2 font-bold text-center">
+                            <button type="submit" class="btn w-14 h-8 bg-black text-yellow-500 hover:bg-gray-900">Login</button>
+                        </div>
+                        <div class="text-center pt-10">
+                            <button type="button" class="btn cancel w-12 h-7 bg-red-600 hover:bg-red-500" onclick="closeForm1mini()">Close</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--Popup Sign up-->
+            <div class="form-popup2 text-black bg-yellow-500 hidden fixed bottom-48 left-[40rem] border border-white z-10 h-[34rem] w-[20rem] transform " id="myForm">
+                <form action="/action_page.php" class="form-container">
+                  <h1 class="font-bold text-3xl text-left pl-6 pt-8">Sign-up</h1>
+                  <div class="pt-10">
+                    <div>
+                    <label class="p-6" for="email"><b>Email</b></label>
+                    <input class="w-64 h-10 p-6 border-none mt-5 mb-0 ml-6 mr-0" type="text" placeholder="Enter Email" name="email" required>
+                    </div>
+                    <div class="pt-4">
+                        <label class="p-6 mt-6" for="psw"><b>Password</b></label>
+                        <input class="w-64 h-10 p-6 border-none mt-5 mb-0 ml-6 mr-0" type="password" placeholder="Enter Password" name="psw" required>
+                    </div>
+                    <div class="pt-4">
+                    <label class="p-6 mt-6" for="psw"><b>Confirm Password</b></label>
+                    <input class="w-64 h-10 p-6 border-none mt-5 mb-0 ml-6 mr-0" type="confirm password" placeholder="Enter Password" name="psw" required>
+                    </div>
+                    <div class="pt-2 font-bold text-center">
+                        <button type="submit" class="btn w-14 h-8 bg-black text-yellow-500 hover:bg-gray-900">Login</button>
+                    </div>
+                    <div class="text-center pt-10">
+                        <button type="button" class="btn cancel w-12 h-7 bg-red-600 hover:bg-red-500" onclick="closeForm2()">Close</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <!--Popup Sign up mini-->
+            <div class="form-popup2mini text-black bg-yellow-500 hidden fixed bottom-48 left-[3rem] border border-white z-10 h-[33rem] w-[19rem] transform " id="myForm">
+                <form action="/action_page.php" class="form-container">
+                  <h1 class="font-bold text-3xl text-left pl-6 pt-8">Sign-up</h1>
+                  <div class="pt-8">
+                    <div>
+                    <label class="p-6" for="email"><b>Email</b></label>
+                    <input class="w-64 h-10 p-6 border-none mt-5 mb-0 ml-6 mr-0" type="text" placeholder="Enter Email" name="email" required>
+                    </div>
+                    <div class="pt-4">
+                        <label class="p-6 mt-6" for="psw"><b>Password</b></label>
+                        <input class="w-64 h-10 p-6 border-none mt-5 mb-0 ml-6 mr-0" type="password" placeholder="Enter Password" name="psw" required>
+                    </div>
+                    <div class="pt-4">
+                    <label class="p-6 mt-6" for="psw"><b>Confirm Password</b></label>
+                    <input class="w-64 h-10 p-6 border-none mt-5 mb-0 ml-6 mr-0" type="confirm password" placeholder="Enter Password" name="psw" required>
+                    </div>
+                    <div class="pt-2 font-bold text-center">
+                        <button type="submit" class="btn w-14 h-8 bg-black text-yellow-500 hover:bg-gray-900">Login</button>
+                    </div>
+                    <div class="text-center pt-10">
+                        <button type="button" class="btn cancel w-12 h-7 bg-red-600 hover:bg-red-500" onclick="closeForm2mini()">Close</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </nav>
+
+        <!--image carousel-->
+        <div class="py-12">
+
+        </div>
+        <div class="carousel flex flex-col items-center justify-center bg-black">
+            <!--Image carousel-->
+            <div class="img-car flex-initial w-max h-fit shadow-xl justify-center">
+                    
+            </div>
+            <!--buttons to select image-->
+            <div class="car-btns flex-initial w-11/12 text-center text-red-700">
+                <button class="btn-car-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 hover:text-red-400">
+                        <path fill-rule="evenodd" d="M4.5 7.5a3 3 0 013-3h9a3 3 0 013 3v9a3 3 0 01-3 3h-9a3 3 0 01-3-3v-9z" clip-rule="evenodd" />
+                      </svg>                      
+                </button>
+                <button class="btn-car-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 hover:text-red-400">
+                        <path fill-rule="evenodd" d="M4.5 7.5a3 3 0 013-3h9a3 3 0 013 3v9a3 3 0 01-3 3h-9a3 3 0 01-3-3v-9z" clip-rule="evenodd" />
+                      </svg>                      
+                </button>
+                <button class="btn-car-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 hover:text-red-400">
+                        <path fill-rule="evenodd" d="M4.5 7.5a3 3 0 013-3h9a3 3 0 013 3v9a3 3 0 01-3 3h-9a3 3 0 01-3-3v-9z" clip-rule="evenodd" />
+                      </svg>                      
+                </button>
+            </div>
+        </div>
+        
+        <!--Showcase-->
+        <section class="showcase text-white md:h-[32rem] h-[16rem]">
+            <div class="justify-center text-justify md:pt-24 pt-8 md:px-32 sm:px-0">
+                <h1 class="text-yellow-500 font-semibold text-right md:text-8xl text-2xl pr-4 md:pb-0 pb-4">TUF GAMING SERIES</h1> 
+                <p class="text-right md:text-xl text-[10px] px-4 md:pt-16">TUF Gaming is for those who demand superior durability, dependable stability and great gaming value. All TUF Gaming products are rigorously tested for endurance, and they are loaded with gamer-optimized features and unique styling. We’ve also teamed up with major component manufacturers around the world to form the TUF Gaming Alliance, 
+                    a bustling ecosystem of products that guarantee compatibility and aesthetic harmony with one another.</p>
+            </div>
+        </section>
+
+        <!--Features section-->
+        <div id="features" class="features h-auto">
+            <h1 class="text-yellow-500 font-semibold text-center md:text-8xl text-2xl md:pb-14 pb-4 md:pt-20 pt-0 animate-fade-in-down">ACCESSORIES</h1>
+            <!--Buttons section 1-->
+            <div class="box-1 md:h-24 h-8 pb-1 text-yellow-600 md:font-bold font-semibold flex md:gap-3 gap-1 justify-center">
+                <button class="btn-box-1 md:text-[18px] md:w-48 md:h-14 text-[7px] w-16 md:text-left md:pl-4 border-2 border-dashed border-yellow-600 hover:bg-gray-950 hover:italic">
+                    Graphics
+                </button>
+                <button class="btn-box-1 md:text-[18px] md:w-48 md:h-14 text-[7px] w-16 md:text-left md:pl-4 border-2 border-dashed border-yellow-600 hover:bg-gray-950 hover:italic">
+                    Motherboard
+                </button>
+                <button class="btn-box-1 md:text-[18px] md:w-48 md:h-14 text-[7px] w-16 md:text-left md:pl-4 border-2 border-dashed border-yellow-600 hover:bg-gray-950 hover:italic">
+                    Keyboards
+                </button>
+                <button class="btn-box-1 md:text-[18px] md:w-48 md:h-14 text-[7px] w-16 md:text-left md:pl-4 border-2 border-dashed border-yellow-600 hover:bg-gray-950 hover:italic">
+                    Mice & M-pads
+                </button>
+                <button class="btn-box-1 md:text-[18px] md:w-48 md:h-14 text-[7px] w-16 md:text-left md:pl-4 border-2 border-dashed border-yellow-600 hover:bg-gray-950 hover:italic">
+                    Laptops
+                </button>
+            </div>
+            <!--Buttons section 2-->
+            <div class="box-2 md:h-24 h-8 pb-1 text-yellow-600 md:font-bold font-semibold flex md:gap-3 gap-1 justify-center">
+                <button class="btn-box-1 md:text-[18px] md:w-48 md:h-14 text-[7px] w-16 md:text-left md:pl-4 border-2 border-dashed border-yellow-600 hover:bg-gray-950 hover:italic">
+                    Headsets
+                </button>
+                <button class="btn-box-1 md:text-[18px] md:w-48 md:h-14 text-[7px] w-16 md:text-left md:pl-4 border-2 border-dashed border-yellow-600 hover:bg-gray-950 hover:italic">
+                    Case Fans
+                </button>
+                <button class="btn-box-1 md:text-[18px] md:w-48 md:h-14 text-[7px] w-16 md:text-left md:pl-4 border-2 border-dashed border-yellow-600 hover:bg-gray-950 hover:italic">
+                    Monitors
+                </button>
+                <button class="btn-box-1 md:text-[18px] md:w-48 md:h-14 text-[7px] w-16 md:text-left md:pl-4 border-2 border-dashed border-yellow-600 hover:bg-gray-950 hover:italic">
+                    Routers
+                </button>
+                <button class="btn-box-1 md:text-[18px] md:w-48 md:h-14 text-[7px] w-16 md:text-left md:pl-4 border-2 border-dashed border-yellow-600 hover:bg-gray-950 hover:italic">
+                    Cases
+                </button>
+            </div>
+            <!--Images being displayed-->
+            <div class="box-3 pt-4">
+                
+            </div>
+        </div>
+
+        <!--Videos for pc view-->
+        <div id="videos" class="video-pcview md:block hidden md:h-[35rem]">
+            <div class="videos md:h-[35rem] h-[30rem] w-11/12">
+                <div class="video-title md:h-[6rem] h-[3rem]">
+                    <h1 class="md:text-8xl md:px-36 text-left text-2xl font-semibold text-yellow-500">VIDEOS</h1>
+                </div>
+                <div class="flex gap-4 pt-24">
+                    <div class="video-1 flex-1 pl-10 md:h-[16rem] h-[9rem]">
+                        <iframe class="w-[22rem] h-[12rem] ml-auto" src="https://www.youtube.com/embed/NuexSRa2x_s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-2 flex-1 md:h-[16rem] h-[9rem]">
+                        <iframe class="w-[22rem] h-[12rem] ml-auto" src="https://www.youtube.com/embed/M6C9q0zb3as" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-3 flex-1 md:h-[16rem] h-[9rem]">
+                        <iframe class="w-[22rem] h-[12rem] ml-auto" src="https://www.youtube.com/embed/gJ85_Ug-QrM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Video for mobile view-->
+        <div class="video-mobileview h-[33rem] md:hidden block mt-16">
+            <div class="video-mobileview h-[33rem] ">
+                <div class="video-title h-[3rem] ">
+                    <h1 class="pl-10 font-semibold text-yellow-500 text-2xl">VIDEOS</h1>
+                </div>
+                <div class="flex-col h-[30rem] ">
+                    <div class="video-1  h-[10rem] ">
+                        <iframe class="w-[16rem] h-[9rem] m-auto" src="https://www.youtube.com/embed/NuexSRa2x_s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-1  h-[10rem] ">
+                        <iframe class="w-[16rem] h-[9rem] m-auto" src="https://www.youtube.com/embed/M6C9q0zb3as" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-1  h-[10rem] ">
+                        <iframe class="w-[16rem] h-[9rem] m-auto" src="https://www.youtube.com/embed/gJ85_Ug-QrM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="md:h-14 h-10 text-white md:text-lg text-xs text-right space-x-3 pr-4 md:block flex md:justify-end justify-center bg-gray-950">
+            <a class="hover:text-gray-600" href="#">Terms of service</a>
+            <a class="hover:text-gray-600 border-x border-white px-3 h-8" href="#">Privacy Policy</a>
+            <h1>&copy;AsusTeK Computer Inc. All Rights Reserved.</h1>
+        </footer>
+    </div>
+</body>
+<script src="asus.js"></script>
+</html>
